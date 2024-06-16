@@ -2,7 +2,7 @@ import re
 
 def normalize_phone(num):
     new_num = re.sub(r"\D", "", num)
-    if len(new_num) < 11:
+    if len(new_num) <= 10:
         return "+38"+new_num
     else:
         return "+"+new_num
@@ -10,7 +10,7 @@ def normalize_phone(num):
 
 raw_numbers = [
     "067\\t123 4567",
-    "(095) 234-5678\\n",
+    "(095) 34-5678\\n",
     "+380 44 123 4567",
     "380501234567",
     "    +38(050)123-32-34",
